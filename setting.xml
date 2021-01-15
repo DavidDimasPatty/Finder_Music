@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient2">
+
+    <TextView
+        android:id="@+id/gantipw"
+        android:layout_width="410dp"
+        android:layout_height="85dp"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="290dp"
+        android:text="Ganti Password"
+        android:textColor="#FFFFFF"/>
+    <ImageView
+        android:layout_width="410dp"
+        android:layout_height="85dp"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="264dp"
+        android:src="@drawable/stroke"/>
+
+
+    <TextView
+        android:id="@+id/gantipp"
+        android:layout_width="410dp"
+        android:layout_height="85dp"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="175dp"
+        android:layout_marginEnd="0dp"
+        android:text="Ganti Photo Profile"
+        android:textColor="#FFFFFF"/>
+    <ImageView
+        android:layout_width="410dp"
+        android:layout_height="85dp"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="145dp"
+        android:src="@drawable/stroke"/>
+
+    <TextView
+        android:id="@+id/gantibg"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="47dp"
+        android:text="Ganti Background Warna"
+        android:textColor="#FFFFFF"/>
+    <ImageView
+        android:layout_width="410dp"
+        android:layout_height="85dp"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:src="@drawable/stroke"/>
+
+
+</RelativeLayout>
