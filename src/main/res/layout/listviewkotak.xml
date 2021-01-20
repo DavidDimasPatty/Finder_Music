@@ -34,7 +34,9 @@
             android:layout_width="99dp"
             android:layout_height="33dp"
             android:gravity="center"
-            android:text="TextView2" />
+            android:text="TextView2"
+            android:textColor="@android:color/white"
+            />
 
         <TextView
             android:id="@+id/textView3"
@@ -42,7 +44,9 @@
             android:layout_height="33dp"
             android:layout_below="@+id/textView2"
             android:gravity="center"
-            android:text="TextView3" />
+
+            android:textColor="@android:color/white"
+            />
     </LinearLayout>
 
 </LinearLayout>

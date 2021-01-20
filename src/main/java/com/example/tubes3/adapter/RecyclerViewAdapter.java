@@ -12,7 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.tubes3.FragmentListener;
+import com.example.tubes3.MainActivity;
 import com.example.tubes3.R;
+import com.example.tubes3.fragmentView.homepage;
 
 import java.util.ArrayList;
 
@@ -42,6 +44,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_listitem, parent, false);
+
         return new ViewHolder(view);
     }
 
@@ -59,9 +62,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG, "onClick: clicked on an image: " + mNames.get(position));
-                Toast.makeText(mContext, mNames.get(position), Toast.LENGTH_SHORT).show();
 
+              homepage.dm=mNames.get(position);
+                listener = (FragmentListener) mContext;
+                if(position==0) {
+                    homepage.leak = "Coldplay";
+                }
+                else if(position==1) {
+                    homepage.leak = "Wiz Khalifa";
+                }
+                else if(position==2) {
+                    homepage.leak = "Radiohead";
+                }
+
+
+               listener.changePage(7);
             }
         });
     }
@@ -84,4 +99,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             name = itemView.findViewById(R.id.name);
         }
     }
+
 }
+
+

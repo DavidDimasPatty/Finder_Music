@@ -8,8 +8,10 @@ public class albumdata {
     private int listen;
     private String desc;
     private String release;
+    private boolean adaisi;
+    private String image;
 
-    public albumdata( String artis, String album,int rating,int listen,String desc,String release) {
+    public albumdata( String artis, String album,int rating,int listen,String desc,String release,boolean adaisi,String image) {
 
         this.artis=artis;
         this.album=album;
@@ -17,6 +19,8 @@ public class albumdata {
         this.listen=listen;
         this.desc=desc;
         this.release=release;
+        this.adaisi=adaisi;
+        this.image=image;
 
     }
 
@@ -43,5 +47,20 @@ public class albumdata {
         return release;
     }
 
+    public boolean getradaisi() {
+        return adaisi;
+    }
+
+
+    public void setadaisi(boolean isi) { this.adaisi=isi; }
+
     public void setRating(int rating) { this.rating = rating; }
+
+
+    public String getimage() {
+        return image;
+    }
+
+
+    public void setimage(String isi) { this.image=image; }
 }

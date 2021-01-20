@@ -1,50 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <EditText
-        android:id="@+id/searching"
-        android:layout_width="337dp"
-        android:layout_height="33dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="44dp" />
-
-    <Button
-        android:id="@+id/butsearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="149dp"
-        android:layout_marginTop="62dp"
-        android:text="Search" />
-
-    <ImageView
-        android:id="@+id/backsearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="8dp"
-        android:src="@drawable/ic_baseline_close_24" />
-
-    <ListView
-        android:id="@+id/cari"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient2">
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="572dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="-3dp"
-        android:layout_marginBottom="-117dp">
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/searching"
+            android:layout_width="318dp"
+            android:layout_height="47dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="44dp"
+            android:hint="Search"
+            android:background="@drawable/kotak" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="47dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="362dp"
+            android:src="@drawable/kotak"/>
+        <ImageView
+            android:id="@+id/iconsearch"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="370dp"
+            android:src="@drawable/search"
+            android:tint="@android:color/black"/>
 
 
-    </ListView>
+        <ImageView
+            android:id="@+id/backsearch"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="6dp"
+            android:src="@drawable/ic_baseline_close_24"
+            android:tint="@android:color/white"/>
+
+        <ListView
+            android:id="@+id/cari"
+            android:layout_width="400dp"
+            android:layout_height="572dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="100dp"
+            android:textColor="#ffffff">
 
 
-</RelativeLayout>
+        </ListView>
+
+    </RelativeLayout>
+</ScrollView>

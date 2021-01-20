@@ -6,11 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.tubes3.FragmentListener;
+import com.example.tubes3.MainActivity;
 import com.example.tubes3.R;
 
 public class profile extends Fragment implements View.OnClickListener{
@@ -23,6 +25,7 @@ public class profile extends Fragment implements View.OnClickListener{
     private Button history;
     private Button logout;
     private FragmentListener listener;
+    public static ImageView img;
     public static profile newInstance(){
         profile fragment1 = new profile();
         return fragment1;
@@ -30,6 +33,7 @@ public class profile extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.profile,container,false);
 
+        MainActivity.bottomNav.setVisibility(View.VISIBLE);
         this.username=view.findViewById(R.id.username2);
         this.idUser=view.findViewById(R.id.iduser);
         this.email=view.findViewById(R.id.email);
@@ -37,6 +41,7 @@ public class profile extends Fragment implements View.OnClickListener{
         this.setting=view.findViewById(R.id.setting);
         this.history=view.findViewById(R.id.history);
         this.logout=view.findViewById(R.id.Logout);
+        this.img=view.findViewById(R.id.profilebg);
 
         this.username.setText(login.usernamelog);
         this.idUser.setText(Integer.toString(login.idlog));
@@ -62,7 +67,7 @@ public class profile extends Fragment implements View.OnClickListener{
         }
         if(v==this.logout){
 
-
+            listener.changePage(8);
 
         }
 

@@ -3,56 +3,57 @@
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/gradient2"
+    >
 
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="900dp"
     android:orientation="vertical">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="139dp"
-        android:layout_marginTop="28dp"
-        android:text="FINDER" />
+        android:layout_marginStart="-7dp"
+        android:layout_marginTop="-22dp"
+        android:src="@drawable/mb2"
+        android:textSize="40dp"
+        android:textStyle="bold" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="377dp"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="156dp"
+        android:text='"Find Your Music Today"'
+        android:textSize="30dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="117dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="81dp"
-        android:text="Find Your Music Today" />
-
-    <EditText
-        android:id="@+id/cari"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="129dp"
-        android:layout_marginTop="108dp"
-        android:hint="Cari Musikmu Disini" />
-
-    <Button
-        android:id="@+id/search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="133dp"
-        android:layout_marginTop="165dp"
-        android:text="Search" />
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="248dp"
+        android:text='Genre'
+        android:textColor="@android:color/white"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="111dp"
+        android:layout_height="157dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="false"
-        android:layout_marginStart="0dp"
+        android:layout_marginStart="3dp"
 
         android:layout_marginTop="300dp"
         android:layout_marginBottom="347dp"
@@ -65,9 +66,36 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="169dp"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="260dp"
+        android:textColor="@android:color/white"
+        android:textSize="20dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="0dp"
+        android:background="@color/colorPrimaryDark" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="290dp"
+        android:layout_marginEnd="-2dp"
+        android:background="@color/colorPrimaryDark" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentEnd="true"
         android:layout_marginTop="240dp"
-        android:text="Daily Mix" />
+        android:layout_marginEnd="-2dp"
+        android:background="@color/colorPrimaryDark" />
 
     <TextView
         android:id="@+id/textView"
@@ -75,9 +103,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="480dp"
-        android:text="Top Song" />
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="529dp"
+        android:text="Top Artis"
+
+        android:textColor="@android:color/white"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -85,9 +116,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="285dp"
-        android:layout_marginTop="480dp"
-        android:text="Top Album" />
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="531dp"
+        android:text="Top Album"
+
+        android:textColor="@android:color/white"
+        android:textSize="20dp" />
 
     <ListView
         android:id="@+id/topsong"
@@ -95,8 +129,8 @@
         android:layout_height="321dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="501dp"
-        android:layout_marginEnd="220dp" />
+        android:layout_marginTop="566dp"
+        android:layout_marginEnd="213dp" />
 
     <ListView
         android:id="@+id/topalbum"
@@ -104,9 +138,8 @@
         android:layout_height="318dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="501dp"
-        android:layout_marginEnd="1dp" />
-
+        android:layout_marginTop="568dp"
+        android:layout_marginEnd="-8dp" />
 
 
 </RelativeLayout>

@@ -5,14 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.example.tubes3.Model.userdata;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 import com.example.tubes3.fragmentView.DetailFragment.detail;
 import com.example.tubes3.fragmentView.DetailFragment.detailAlbum;
+import com.example.tubes3.fragmentView.DetailFragment.detailSong;
 import com.example.tubes3.fragmentView.dialog.dialog_ganti_password;
 import com.example.tubes3.fragmentView.dialog.dialog_ganti_pp;
 import com.example.tubes3.fragmentView.dialog.dialog_ganti_warna;
@@ -26,11 +30,18 @@ import com.example.tubes3.fragmentView.setting;
 import com.example.tubes3.fragmentView.signup;
 import com.example.tubes3.fragmentView.topalbum;
 import com.example.tubes3.fragmentView.topsong;
-import com.example.tubes3.presenter.presenterAlbum;
 import com.example.tubes3.presenter.presenterArtis;
-import com.example.tubes3.presenter.presenterSong;
 import com.example.tubes3.presenter.presenterUser;
+import com.example.tubes3.webService.fetchData;
+import com.example.tubes3.webService.musicbrainzService;
+import com.example.tubes3.webService.webServiceArtis;
+import com.example.tubes3.webService.webServiceDataSong;
+import com.example.tubes3.webService.webServiceLagu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
     private homepage fragment1;
@@ -48,9 +59,12 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     private topalbum fragment12;
     private topsong fragment13;
     private detailAlbum fragment14;
+    private detailSong fragment15;
     private FragmentManager fragmentManager;
     private FragmentTransaction ft;
-
+    private ProgressDialog progressDialog;
+    ArrayList<HashMap<String, String>> songlist;
+    public static String tes;
     //  private menu_fragment menu;
     // private FragmentGameOver over;
     // private username userr;
@@ -63,6 +77,32 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     // private float[] magnetometerReading = new float[3];
     //  public static boolean warna=false;
     //  public static  float pitch;
+    public static RequestQueue mQueue;
+
+    public static RequestQueue mQueue2;
+
+    public static RequestQueue mQueue3;
+    public static RequestQueue mQueue4;
+
+    public static RequestQueue mQueue5;
+
+    public static RequestQueue mQueue6;
+
+    public static RequestQueue mQueue7;
+
+    public static RequestQueue mQueue8;
+
+    public static RequestQueue mQueue9;
+
+    public static RequestQueue mQueue10;
+
+    public static RequestQueue mQueue11;
+
+    public static RequestQueue mQueue12;
+
+    public static RequestQueue mQueue13;
+    public static  BottomNavigationView bottomNav;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,40 +123,63 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         this.fragment11 = signup.newInstance();
         this.fragment12 = topalbum.newInstance();
         this.fragment13 = topsong.newInstance();
-        this.fragment14=detailAlbum.newInstance();
+        this.fragment14 = detailAlbum.newInstance();
+        this.fragment15 = detailSong.newInstance();
+        this.mQueue = Volley.newRequestQueue(this);
+
+        this.mQueue2 = Volley.newRequestQueue(this);
+
+        this.mQueue3 = Volley.newRequestQueue(this);
+
+
+        this.mQueue4 = Volley.newRequestQueue(this);
+
+        this.mQueue5 = Volley.newRequestQueue(this);
+
+        this.mQueue6 = Volley.newRequestQueue(this);
+
+        this.mQueue7 = Volley.newRequestQueue(this);
+
+        this.mQueue8 = Volley.newRequestQueue(this);
+
+        this.mQueue9 = Volley.newRequestQueue(this);
+
+
+        this.mQueue10 = Volley.newRequestQueue(this);
+
+        this.mQueue11 = Volley.newRequestQueue(this);
+
+        this.mQueue12 = Volley.newRequestQueue(this);
+
+        this.mQueue13 = Volley.newRequestQueue(this);
 
 
         this.fragmentManager = this.getSupportFragmentManager();
         this.ft = this.fragmentManager.beginTransaction();
         ft.add(R.id.fragment_container, this.fragment7);
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+       this.bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         // mSensorManager =(SensorManager) getSystemService(Context.SENSOR_SERVICE);
         // this.mSensorAccelerometer=this.mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         //this.mSensorMagnetometer=this.mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
-        add("Selena Gomez",9,2134,"artis amerika","test");
 
-        add("Selena Gomez",9,2134,"artis amerika","test");
+        songlist = new ArrayList<>();
+        musicbrainzService mbs = new musicbrainzService();
+        mbs.jsonParse();
+        webServiceDataSong wsd = new webServiceDataSong();
+        wsd.jsonParse();
+        webServiceLagu wsa = new webServiceLagu();
+        wsa.jsonParse();
+        webServiceArtis wartis = new webServiceArtis();
+        wartis.jsonParse();
+        fetchData process = new fetchData();
+        process.execute();
 
-        add("Selena Gomez",9,2134,"artis amerika","test");
-
-        add("Selena Gomez",9,2134,"artis amerika","test");
-
-        add("Selena Gomez",9,2134,"artis amerika","test");
-        addAlbum("selena","do want",10,2321,"mantap bang","20-12-2012");
-
-        addAlbum("selena","crystal",10,2321,"mantap bang","20-12-2012");
         ft.commit();
-        addsong("nada kasih","w","a",4,3,"3","32");
 
-        addsong("test","w","do want",4,3,"3","32");
 
-        addsong("beer bong","w","do want",4,3,"3","32");
-
-        addsong("circle","w","do want",4,3,"3","32");
-
-        addUser(1,"admin","admin","admin@gmail.com","089231231241");
     }
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -140,82 +203,87 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
                 }
             };
 
+
     @Override
     public void changePage(int page) {
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
-        if(page==1){
-            ft.replace(R.id.fragment_container,this.fragment1)
+        if (page == 1) {
+            ft.replace(R.id.fragment_container, this.fragment1)
                     .addToBackStack(null);
         }
-        if(page==2){
-            ft.replace(R.id.fragment_container,this.fragment2)
+        if (page == 2) {
+            ft.replace(R.id.fragment_container, this.fragment2)
                     .addToBackStack(null);
         }
-        if(page==3){
-            ft.replace(R.id.fragment_container,this.fragment22)
+        if (page == 3) {
+            ft.replace(R.id.fragment_container, this.fragment22)
                     .addToBackStack(null);
         }
-        if(page==4){
-            ft.replace(R.id.fragment_container,this.fragment3)
+        if (page == 4) {
+            ft.replace(R.id.fragment_container, this.fragment3)
                     .addToBackStack(null);
         }
-        if(page==5){
-            ft.replace(R.id.fragment_container,this.fragment4)
+        if (page == 5) {
+            ft.replace(R.id.fragment_container, this.fragment4)
                     .addToBackStack(null);
         }
-        if(page==6){
-            ft.replace(R.id.fragment_container,this.fragment5)
+        if (page == 6) {
+            ft.replace(R.id.fragment_container, this.fragment5)
                     .addToBackStack(null);
         }
-        if(page==7){
-            ft.replace(R.id.fragment_container,this.fragment6)
+        if (page == 7) {
+            ft.replace(R.id.fragment_container, this.fragment6)
                     .addToBackStack(null);
         }
-        if(page==8){
-            ft.replace(R.id.fragment_container,this.fragment7)
+        if (page == 8) {
+
+            ft.replace(R.id.fragment_container, this.fragment7)
                     .addToBackStack(null);
         }
-        if(page==9){
-            ft.replace(R.id.fragment_container,this.fragment8)
-                    .addToBackStack(null);
-        }   if(page==10){
-            ft.replace(R.id.fragment_container,this.fragment9)
-                    .addToBackStack(null);
-        }   if(page==11){
-            ft.replace(R.id.fragment_container,this.fragment10)
+        if (page == 9) {
+            ft.replace(R.id.fragment_container, this.fragment8)
                     .addToBackStack(null);
         }
-        if(page==12){
-            ft.replace(R.id.fragment_container,this.fragment11)
+        if (page == 10) {
+            ft.replace(R.id.fragment_container, this.fragment9)
                     .addToBackStack(null);
         }
-        if(page==13){
-            ft.replace(R.id.fragment_container,this.fragment12)
+        if (page == 11) {
+            ft.replace(R.id.fragment_container, this.fragment10)
                     .addToBackStack(null);
         }
-        if(page==14){
-            ft.replace(R.id.fragment_container,this.fragment13)
+        if (page == 12) {
+            ft.replace(R.id.fragment_container, this.fragment11)
                     .addToBackStack(null);
         }
-        if(page==15){
-            ft.replace(R.id.fragment_container,this.fragment14)
+        if (page == 13) {
+            ft.replace(R.id.fragment_container, this.fragment12)
+                    .addToBackStack(null);
+        }
+        if (page == 14) {
+            ft.replace(R.id.fragment_container, this.fragment13)
+                    .addToBackStack(null);
+        }
+        if (page == 15) {
+            ft.replace(R.id.fragment_container, this.fragment14)
+                    .addToBackStack(null);
+        }
+        if (page == 16) {
+            ft.replace(R.id.fragment_container, this.fragment15)
                     .addToBackStack(null);
         }
 
         ft.commit();
 
     }
-    public void add(String artis,int rating,int listen,String desc,String gambar){
-        presenterArtis.addToList( artis, rating, listen,desc, gambar);
+
+    public void add(String artis, int rating, int listen, String desc, String gambar) {
+        presenterArtis.addToList(artis, rating, listen, desc, gambar);
     }
 
-    public void addAlbum(String artis, String album,int rating,int listen,String desc,String release){
-        presenterAlbum.addToList( artis,  album,rating, listen, desc, release);
+    public static void addUser(int id, String username, String password, String email, String phone) {
+        presenterUser.addToList(id, username, password, email, phone);
     }
-    public void addsong (String nama, String artis, String album,int rating,int listen,String desc,String release){
-        presenterSong.addToList(nama, artis, album, rating,listen, desc, release);}
 
-    public static void addUser(int id,String username,String password,String email,String phone){
-        presenterUser.addToList(id,username,  password, email, phone);
-    }
+
 }

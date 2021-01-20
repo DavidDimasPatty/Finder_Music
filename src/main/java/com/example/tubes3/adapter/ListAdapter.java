@@ -56,7 +56,7 @@ public class ListAdapter extends BaseAdapter {
         this.score=v.findViewById(R.id.textView3);
         //this.image=v.findViewById(R.id.imagee);
         this.tvNama.setText(this.ListAdapter.get(position).getArtis());
-        this.score.setText(Integer.toString(this.ListAdapter.get(position).getListen()));
+        this.score.setText(Float.toString(this.ListAdapter.get(position).getRating()));
         return v;
     }
 

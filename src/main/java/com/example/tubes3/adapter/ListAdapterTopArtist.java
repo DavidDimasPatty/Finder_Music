@@ -4,16 +4,14 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.StrictMode;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.tubes3.Model.songdata;
+import com.example.tubes3.Model.albumdata;
+import com.example.tubes3.Model.artistdata;
 import com.example.tubes3.R;
-import com.example.tubes3.presenter.presenter;
-import com.example.tubes3.presenter.presenterArtis;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,28 +21,28 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ListAdapterDetailAlbum extends BaseAdapter {
+public class ListAdapterTopArtist extends BaseAdapter {
+
     private Activity activity;
-    private ArrayList<songdata> ListAdapterDetailAlbum;
+    private ArrayList<artistdata> ListAdapterTopArtist ;
     private TextView tvNama;
     private TextView score;
-    private String urg="";
-
     private CircleImageView image;
+    private Bitmap gambar;
 
-    public ListAdapterDetailAlbum(Activity activity){
+    public ListAdapterTopArtist(Activity activity){
         this.activity = activity;
-        this.ListAdapterDetailAlbum = new ArrayList<songdata>();
+        this.ListAdapterTopArtist  = new ArrayList<artistdata>();
     }
 
     @Override
     public int getCount() {
-        return this.ListAdapterDetailAlbum.size();
+        return this.ListAdapterTopArtist .size();
     }
 
     @Override
     public Object getItem(int position) {
-        return this.ListAdapterDetailAlbum.get(position);
+        return this.ListAdapterTopArtist .get(position);
     }
 
     @Override
@@ -53,7 +51,7 @@ public class ListAdapterDetailAlbum extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View v;
         if(convertView == null){
             v = this.activity.getLayoutInflater().inflate(R.layout.listviewkotak, null);
@@ -61,19 +59,12 @@ public class ListAdapterDetailAlbum extends BaseAdapter {
         else{
             v = convertView;
         }
+
+
         this.tvNama = v.findViewById(R.id.textView2);
         this.score=v.findViewById(R.id.textView3);
-
         this.image=v.findViewById(R.id.imagee);
-        this.tvNama.setText(this.ListAdapterDetailAlbum.get(position).getNama());
-        this.score.setText(this.ListAdapterDetailAlbum.get(position).getArtis());
-        this.urg="";
-        for(int i=0;i< presenterArtis.getTotalSize();i++){
-            if(this.ListAdapterDetailAlbum.get(position).getArtis().equals(presenterArtis.getArtis(i))){
-                this.urg=presenterArtis.getimage(i);
-                break;
-            }
-        }
+        this.tvNama.setText(this.ListAdapterTopArtist .get(position).getArtis());
 
         int SDK_INT = android.os.Build.VERSION.SDK_INT;
         if (SDK_INT > 8)
@@ -81,25 +72,18 @@ public class ListAdapterDetailAlbum extends BaseAdapter {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
                     .permitAll().build();
             StrictMode.setThreadPolicy(policy);
-            this.image.setImageBitmap(getBitmapFromURL(urg));
+            this.image.setImageBitmap(getBitmapFromURL(this.ListAdapterTopArtist .get(position).getGambar()));
         }
+
+
         return v;
     }
 
-    public void add(String nama, String artis, String album,float rating,int listen){
-        this.ListAdapterDetailAlbum.add(new songdata( nama,  artis, album, rating, listen));
+    public void add(String artis,float rating,int listen,String desc,String gambar){
+        this.ListAdapterTopArtist.add(new artistdata( artis,rating, listen, desc,gambar));
         this.notifyDataSetChanged();
     }
 
-    public void delete(int position){
-        updatePresenter(position);
-        this.ListAdapterDetailAlbum.remove(position);
-        this.notifyDataSetChanged();
-    }
-
-    public static void updatePresenter(int position){
-        presenter.remove(position);
-    }
     public static Bitmap getBitmapFromURL(String src) {
 
         try {
@@ -115,4 +99,5 @@ public class ListAdapterDetailAlbum extends BaseAdapter {
             return null;
         }
     }
+
 }

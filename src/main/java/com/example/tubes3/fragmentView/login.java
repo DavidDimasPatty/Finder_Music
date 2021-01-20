@@ -28,6 +28,7 @@ private Button singup;
 private FragmentListener listener;
 public static String usernamelog;
 public static String emaillog;
+public static String pwlog;
 public static int idlog;
 public static String phonelog;
 
@@ -44,6 +45,8 @@ public static String phonelog;
         this.login.setOnClickListener(this);
         this.singup.setOnClickListener(this);
         this.ua = new userAdapter();
+
+        MainActivity.bottomNav.setVisibility(View.GONE);
         return view;
     }
 
@@ -53,10 +56,13 @@ public static String phonelog;
             for(int i = 0; i < presenterUser.getTotalSize() ; i++){
                 if(username.getText().toString().equals(presenterUser.getUsername(i))&&password.getText().toString().equals(presenterUser.getpassword(i))){
                     listener.changePage(1);
+                    this.username.setText("");
+                    this.password.setText("");
                 }
                 usernamelog=presenterUser.getUsername(i);
                 emaillog=presenterUser.getemail(i);
                 idlog=presenterUser.getid(i);
+                pwlog=presenterUser.getpassword(i);
                 phonelog=presenterUser.getphone(i);
             }
         }
@@ -76,5 +82,7 @@ public static String phonelog;
                     + " must implement FragmentListener");
         }
     }
+
+
 
 }

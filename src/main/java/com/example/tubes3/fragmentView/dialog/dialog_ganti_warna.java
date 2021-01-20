@@ -30,7 +30,6 @@ public class dialog_ganti_warna extends AppCompatDialogFragment implements Fragm
         LayoutInflater inflater= getActivity().getLayoutInflater();
         View view=inflater.inflate(R.layout.dialog_ganti_warna,null);
 
-        this.gallery=view.findViewById(R.id.gallery);
         this.ganti=view.findViewById(R.id.foto);
 
 

@@ -27,7 +27,9 @@ public class presenterUser {
     public static String getpassword(int position){
         return alData.get(position).getPassword();
     }
-
+    public static void setpw(int position,String pass){
+        alData.get(position).setPassword(pass);
+    }
     public static int getTotalSize(){
         return alData.size();
     }

@@ -24,12 +24,11 @@ public class setting extends Fragment implements View.OnClickListener{
     }
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.setting,container,false);
-        this.gantibg=view.findViewById(R.id.gantibg);
+
         this.gantipp=view.findViewById(R.id.gantipp);
         this.gantipw=view.findViewById(R.id.gantipw);
         this.gantipw.setOnClickListener(this);
         this.gantipp.setOnClickListener(this);
-        this.gantibg.setOnClickListener(this);
 
 
 

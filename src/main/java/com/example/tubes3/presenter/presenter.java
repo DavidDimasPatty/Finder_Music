@@ -19,18 +19,12 @@ public class presenter {
     public static String getalbum(int position){
         return alData.get(position).getAlbum();
     }
-    public static String getdesc(int position){
-        return alData.get(position).getDesc();
-    }
-    public static String getrelease(int position){
-        return alData.get(position).getrelease();
-    }
+
+
     public static int getlisten(int position){
         return alData.get(position).getListen();
     }
-    public static int getrating(int position){
-        return alData.get(position).getRating();
-    }
+
 
     public static int getTotalSize(){
         return alData.size();

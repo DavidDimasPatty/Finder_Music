@@ -1,39 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient2">
 
     <TextView
         android:id="@+id/gantipw"
         android:layout_width="410dp"
-        android:layout_height="88dp"
+        android:layout_height="85dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="220dp"
+        android:text="Ganti Password"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF" />
+
+
+    <ImageView
+        android:layout_width="410dp"
+        android:layout_height="85dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="264dp"
-        android:text="Ganti Password" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="-5dp"
+        android:src="@drawable/stroke"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/gantipp"
         android:layout_width="410dp"
         android:layout_height="85dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="125dp"
-        android:layout_marginEnd="0dp"
-        android:text="Ganti Photo Profile" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="2dp"
+        android:text="Ganti Photo Profile"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF" />
 
-    <TextView
-        android:id="@+id/gantibg"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
+    <ImageView
+        android:layout_width="410dp"
+        android:layout_height="85dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="-2dp"
-        android:layout_marginTop="17dp"
-        android:text="Ganti Background Warna" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="-3dp"
+        android:src="@drawable/stroke"
+        android:textAlignment="center" />
 
 
 </RelativeLayout>

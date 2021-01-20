@@ -34,4 +34,8 @@ public class userdata {
 
     public String getPhone() { return  phone; }
 
+    public void setPassword(String pass){
+        this.password=pass;
+    }
+
     }

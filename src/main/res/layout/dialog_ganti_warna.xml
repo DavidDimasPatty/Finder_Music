@@ -10,6 +10,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="131dp"
+        android:src="@drawable/rotate"
         android:layout_marginTop="184dp" />
 
     <TextView
