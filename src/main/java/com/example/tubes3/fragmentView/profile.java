@@ -66,7 +66,11 @@ public class profile extends Fragment implements View.OnClickListener{
 
         }
         if(v==this.logout){
-
+            login.usernamelog="";
+            login.emaillog="";
+            login.idlog=0;
+            login.phonelog="";
+            login.pwlog="";
             listener.changePage(8);
 
         }

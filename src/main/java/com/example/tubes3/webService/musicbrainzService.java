@@ -46,9 +46,9 @@ public class musicbrainzService {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
-                Log.d("TAG", "onErrorResponse: "+"error");
-            }
-        });
+        Log.d("TAG", "onErrorResponse: "+"error");
+    }
+});
         MainActivity.mQueue.add(request);
     }
 

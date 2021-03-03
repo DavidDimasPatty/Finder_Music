@@ -25,7 +25,9 @@
             android:layout_marginTop="177dp"
             android:text="Judul"
             android:textColor="#ffffff"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+            android:textAlignment="center"
+            />
 
         <ListView
             android:id="@+id/libal"

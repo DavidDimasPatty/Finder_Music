@@ -47,6 +47,8 @@ public static String phonelog;
         this.ua = new userAdapter();
 
         MainActivity.bottomNav.setVisibility(View.GONE);
+
+        Log.d("TAG", "onCreateView: "+presenterUser.getTotalSize());
         return view;
     }
 
@@ -64,6 +66,7 @@ public static String phonelog;
                 idlog=presenterUser.getid(i);
                 pwlog=presenterUser.getpassword(i);
                 phonelog=presenterUser.getphone(i);
+
             }
         }
 
